@@ -3,6 +3,54 @@ Estudo Empírico doo comportamento relacional entre crescimento econômico e a d
 # Método Generalizado dos Momentos (GMM)
 O Método Generalizado dos Momentos (GMM) é uma técnica estatística utilizada para estimar parâmetros em modelos econométricos. É um método de estimativa flexível que pode ser usado em uma variedade de configurações, incluindo modelos de dados em painel. O estimador GMM explora de forma ótima todas as restrições de momento linear que seguem da suposição de nenhuma correlação serial nos erros, em uma equação que contém efeitos individuais, variáveis dependentes defasadas e não variáveis estritamente exógenas. O estimador GMM oferece ganhos de eficiência significativos em comparação com alternativas mais simples de variáveis instrumentais (IV) e produz estimativas bem determinadas em modelos de dados em painel dinâmico (ARELLANO e BOND, 1991).
 # Variáveis
+# Modelo Econométrico
+
+A variável dependente utilizada foi a **taxa de crescimento do PIB total** (`cresc`).  
+O vetor de variáveis explicativas contém:
+
+- **pop** – população  
+- **emp** – número de pessoas empregadas  
+- **rnna** – estoque de capital  
+- **csh_c** – consumo das famílias  
+- **csh_g** – consumo do governo  
+- **pib_d** – PIB real pelo lado da despesa  
+- **gini** – índice de desigualdade de renda  
+
+## Especificação do Modelo
+
+O modelo base, sem especificidade, pode ser representado da seguinte forma:
+
+\[
+\text{cresc} = \beta_1 + \beta_2 \cdot \text{pop} + \beta_3 \cdot \text{emp} + \beta_4 \cdot \text{rnna} + \beta_5 \cdot \text{csh\_c} + \beta_6 \cdot \text{csh\_g} + \beta_7 \cdot \text{pib\_d} + \beta_8 \cdot \text{gini} + \varepsilon
+\]
+
+**Eq. 1**
+
+Onde \(\beta_1, \ldots, \beta_8\) são os coeficientes de regressão e \(\varepsilon\) é o termo de erro.
+
+## Possíveis Fontes de Viés
+
+A estimativa da relação entre desigualdade e crescimento pode ser enviesada devido a:
+
+- **Simultaneidade**  
+- **Variáveis omitidas**  
+- **Erro de medida**
+
+Esses problemas são especialmente relevantes em dados **cross-country**, dada a heterogeneidade entre países.
+
+## Métodos de Estimação
+
+Para mitigar efeitos não observados, utilizam-se:
+
+- **Modelos de Efeitos Fixos (EF)**
+- **Modelos de Efeitos Aleatórios (EA)**
+
+Entretanto, em painéis dinâmicos, EF e EA podem gerar estimativas **tendenciosas e inconsistentes**.
+
+Outra alternativa seria o uso de **Variáveis Instrumentais (VI)**, embora encontrar instrumentos válidos seja desafiador.
+
+Dado o contexto internacional, o **Método Generalizado dos Momentos (GMM)** tende a ser mais adequado (NAGUIB, 2017).
+
 A variável dependente foi a taxa de crescimento do PIB total (cresc) e o vetor de variáveis explicativas contém as seguintes variáveis: população (pop), número de pessoas empregadas (emp), estoque de capital (rnna), consumo das famílias (csh_c), consumo do governo (csh_g) e PIB real do lado da despesa (pib_d) e o índice de desigualdade de renda (gini). Assim, o modelo base, sem especificidade, neste trabalho, pode ser representado da seguinte forma:
 	cresc=β_1+β_2  pop+ β_3  emp+β_4  rnna+ β_5  csh"_c"+ β_6  csh"_g"+ β_7  pib"_d"+ β_8  gini+ε	Eq. 1
 Onde β_1  "," ⋯,β_8 são os coeficientes de regressão e ε é o termo de erro.
