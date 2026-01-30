@@ -3,54 +3,10 @@ Estudo Empírico doo comportamento relacional entre crescimento econômico e a d
 # Método Generalizado dos Momentos (GMM)
 O Método Generalizado dos Momentos (GMM) é uma técnica estatística utilizada para estimar parâmetros em modelos econométricos. É um método de estimativa flexível que pode ser usado em uma variedade de configurações, incluindo modelos de dados em painel. O estimador GMM explora de forma ótima todas as restrições de momento linear que seguem da suposição de nenhuma correlação serial nos erros, em uma equação que contém efeitos individuais, variáveis dependentes defasadas e não variáveis estritamente exógenas. O estimador GMM oferece ganhos de eficiência significativos em comparação com alternativas mais simples de variáveis instrumentais (IV) e produz estimativas bem determinadas em modelos de dados em painel dinâmico (ARELLANO e BOND, 1991).
 # Modelo Econométrico
-# Modelo Econométrico
-
-A variável dependente utilizada foi a **taxa de crescimento do PIB total** (`cresc`).  
-O vetor de variáveis explicativas contém:
-
-- **pop** – população  
-- **emp** – número de pessoas empregadas  
-- **rnna** – estoque de capital  
-- **csh_c** – consumo das famílias  
-- **csh_g** – consumo do governo  
-- **pib_d** – PIB real pelo lado da despesa  
-- **gini** – índice de desigualdade de renda  
-
-## Especificação do Modelo
-
-O modelo base, sem especificidade, pode ser representado da seguinte forma:
-
-$$
-\text{cresc} = \beta_1 + \beta_2\,\text{pop} + \beta_3\,\text{emp} + \beta_4\,\text{rnna} + \beta_5\,\text{csh\_c} + \beta_6\,\text{csh\_g} + \beta_7\,\text{pib\_d} + \beta_8\,\text{gini} + \varepsilon
-$$
-
-**Eq. 1**
-
-Onde $\beta_1, \ldots, \beta_8$ são os coeficientes de regressão e $\varepsilon$ é o termo de erro.
-
-## Possíveis Fontes de Viés
-
-A estimativa da relação entre desigualdade e crescimento pode ser enviesada devido a:
-
-- **Simultaneidade**  
-- **Variáveis omitidas**  
-- **Erro de medida**
-
-Esses problemas são especialmente relevantes em dados **cross-country**, dada a heterogeneidade entre países.
-
-## Métodos de Estimação
-
-Para mitigar efeitos não observados, utilizam-se:
-
-- **Modelos de Efeitos Fixos (EF)**
-- **Modelos de Efeitos Aleatórios (EA)**
-
-Entretanto, em painéis dinâmicos, EF e EA podem gerar estimativas **tendenciosas e inconsistentes**.
-
-Outra alternativa seria o uso de **Variáveis Instrumentais (VI)**, embora encontrar instrumentos válidos seja desafiador.
-
-Dado o contexto internacional, o **Método Generalizado dos Momentos (GMM)** tende a ser mais adequado (NAGUIB, 2017).
-
+A variável dependente foi a taxa de crescimento do PIB total (cresc) e o vetor de variáveis explicativas contém as seguintes variáveis: população (pop), número de pessoas empregadas (emp), estoque de capital (rnna), consumo das famílias (csh_c), consumo do governo (csh_g) e PIB real do lado da despesa (pib_d) e o índice de desigualdade de renda (gini). Assim, o modelo base, sem especificidade, neste trabalho, pode ser representado da seguinte forma:
+	$$cresc=\beta_1+\beta_2\ \ pop+\ \beta_3\ \ emp+\beta_4\ \ rnna+\ \beta_5\ \ csh"_c"+\ \beta_6\ \ csh"_g"+\ \beta_7\ \ pib"_d"+\ \beta_8\ \ gini+\varepsilon$$	Eq. 1
+Onde $$\beta_1\ \mathrm{,} ⋯,\ \beta_8$$ são os coeficientes de regressão e \varepsilon é o termo de erro.
+A estimativa da relação entre desigualdade e crescimento pode ser enviesada por simultaneidade, variáveis omitidas e erro de medida, uma vez que a heterogeneidade é pertinente por tratar-se de dados de diferentes países. Para uma estimativa consistente procura-se eliminar ou, ao menos, mitigar os efeitos não observados através de modelos de efeitos fixos (EF) e efeitos aleatórios (EA). Entretanto, devido à característica de painel dinâmico, as estimativas de EF e EA podem ser tendenciosas e inconsistente. Outra possível implementação de estimativa do modelo (Eq. 1) seria o método de variáveis instrumentais (VI), porém, encontrar instrumentos válidos não é simples. Dado o contexto cross-country, o Método Generalizado dos Momentos (GMM) seja capaz de ser mais adequado (NAGUIB, 2017).
 # Modelo de dados em painel dinâmico linear
 Em particular, um modelo de dados em painel dinâmico linear é dado da seguinte forma (FRITSCH, PUA e SCHNURBUS, 2021):
 	y_(i,t)=αy_(i,t-1)+βx_(i,t)+u_(i,t)
