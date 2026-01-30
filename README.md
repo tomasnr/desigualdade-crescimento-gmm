@@ -20,18 +20,7 @@ O vetor de variáveis explicativas contém:
 
 O modelo base, sem especificidade, pode ser representado da seguinte forma:
 
-$$
-\text{cresc} =
-\beta_1
-+ \beta_2\,\text{pop}
-+ \beta_3\,\text{emp}
-+ \beta_4\,\text{rnna}
-+ \beta_5\,\text{csh\_c}
-+ \beta_6\,\text{csh\_g}
-+ \beta_7\,\text{pib\_d}
-+ \beta_8\,\text{gini}
-+ \varepsilon
-$$
+$$\text{cresc} = \beta_1 + \beta_2\,\text{pop} + \beta_3\,\text{emp} + \beta_4\,\text{rnna} + \beta_5\,\text{csh\_c} + \beta_6\,\text{csh\_g} + \beta_7\,\text{pib\_d} + \beta_8\,\text{gini} + \varepsilon$$
 
 **Eq. 1**
 
