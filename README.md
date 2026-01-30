@@ -2,7 +2,7 @@
 Estudo Empírico doo comportamento relacional entre crescimento econômico e a desigualdade de distribuição de renda, tendo como base a implementação do Generalized Method of Moments (GMM), proposto por Arellano e Bond (1991) e utilizando a ferramenta computacional pacote R pdynmc, desenvolvida por Fritsch, Pua e Schnurbus (2021).
 # Método Generalizado dos Momentos (GMM)
 O Método Generalizado dos Momentos (GMM) é uma técnica estatística utilizada para estimar parâmetros em modelos econométricos. É um método de estimativa flexível que pode ser usado em uma variedade de configurações, incluindo modelos de dados em painel. O estimador GMM explora de forma ótima todas as restrições de momento linear que seguem da suposição de nenhuma correlação serial nos erros, em uma equação que contém efeitos individuais, variáveis dependentes defasadas e não variáveis estritamente exógenas. O estimador GMM oferece ganhos de eficiência significativos em comparação com alternativas mais simples de variáveis instrumentais (IV) e produz estimativas bem determinadas em modelos de dados em painel dinâmico (ARELLANO e BOND, 1991).
-# Variáveis
+# Modelo Econométrico
 # Modelo Econométrico
 
 A variável dependente utilizada foi a **taxa de crescimento do PIB total** (`cresc`).  
@@ -20,13 +20,21 @@ O vetor de variáveis explicativas contém:
 
 O modelo base, sem especificidade, pode ser representado da seguinte forma:
 
-\[
-\text{cresc} = \beta_1 + \beta_2 \cdot \text{pop} + \beta_3 \cdot \text{emp} + \beta_4 \cdot \text{rnna} + \beta_5 \cdot \text{csh\_c} + \beta_6 \cdot \text{csh\_g} + \beta_7 \cdot \text{pib\_d} + \beta_8 \cdot \text{gini} + \varepsilon
-\]
+$$
+\text{cresc} = \beta_1 
++ \beta_2 \,\text{pop}
++ \beta_3 \,\text{emp}
++ \beta_4 \,\text{rnna}
++ \beta_5 \,\text{csh\_c}
++ \beta_6 \,\text{csh\_g}
++ \beta_7 \,\text{pib\_d}
++ \beta_8 \,\text{gini}
++ \varepsilon
+$$
 
 **Eq. 1**
 
-Onde \(\beta_1, \ldots, \beta_8\) são os coeficientes de regressão e \(\varepsilon\) é o termo de erro.
+Onde $\beta_1, \ldots, \beta_8$ são os coeficientes de regressão e $\varepsilon$ é o termo de erro.
 
 ## Possíveis Fontes de Viés
 
@@ -51,10 +59,6 @@ Outra alternativa seria o uso de **Variáveis Instrumentais (VI)**, embora encon
 
 Dado o contexto internacional, o **Método Generalizado dos Momentos (GMM)** tende a ser mais adequado (NAGUIB, 2017).
 
-A variável dependente foi a taxa de crescimento do PIB total (cresc) e o vetor de variáveis explicativas contém as seguintes variáveis: população (pop), número de pessoas empregadas (emp), estoque de capital (rnna), consumo das famílias (csh_c), consumo do governo (csh_g) e PIB real do lado da despesa (pib_d) e o índice de desigualdade de renda (gini). Assim, o modelo base, sem especificidade, neste trabalho, pode ser representado da seguinte forma:
-	cresc=β_1+β_2  pop+ β_3  emp+β_4  rnna+ β_5  csh"_c"+ β_6  csh"_g"+ β_7  pib"_d"+ β_8  gini+ε	Eq. 1
-Onde β_1  "," ⋯,β_8 são os coeficientes de regressão e ε é o termo de erro.
-A estimativa da relação entre desigualdade e crescimento pode ser enviesada por simultaneidade, variáveis omitidas e erro de medida, uma vez que a heterogeneidade é pertinente por tratar-se de dados de diferentes países. Para uma estimativa consistente procura-se eliminar ou, ao menos, mitigar os efeitos não observados através de modelos de efeitos fixos (EF) e efeitos aleatórios (EA). Entretanto, devido à característica de painel dinâmico, as estimativas de EF e EA podem ser tendenciosas e inconsistente. Outra possível implementação de estimativa do modelo (Eq. 1) seria o método de variáveis instrumentais (VI), porém, encontrar instrumentos válidos não é simples. Dado o contexto cross-country, o Método Generalizado dos Momentos (GMM) seja capaz de ser mais adequado (NAGUIB, 2017).
 # Modelo de dados em painel dinâmico linear
 Em particular, um modelo de dados em painel dinâmico linear é dado da seguinte forma (FRITSCH, PUA e SCHNURBUS, 2021):
 	y_(i,t)=αy_(i,t-1)+βx_(i,t)+u_(i,t)
